@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileLines, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import generateHTML from './template';
 import './Sub.css';
 import data from './data.json';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import TypingEffect from './TypingEffect';
 
 const SubmissionForm = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +33,8 @@ const SubmissionForm = () => {
   const [generatedLink, setGeneratedLink] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
+  const textToType = "Addd your details and take your landing page in 2 seconds";
+  const typingSpeed = 100; // Speed in milliseconds
   const codeSnippet = `function doPost(e) { 
     var sheet = SpreadsheetApp.openById('Add your Sheet ID here e.g: 1mHXP6VnLTwmtigt3_a3MuTr0tOISEDeH0jYcRT34Jl4').getActiveSheet();
     var rowData = [];
@@ -130,9 +134,9 @@ const SubmissionForm = () => {
       <header className="header">
         <div className="logo"><img style={{ width: '50px' }} src="logo.svg" alt="logo" /></div>
         <nav>
-          <a href="https://wa.me/213549194814">Get Code</a>
-          <a href="https://dzeasy.netlify.app/template/index.html">Templates</a>
-          <a href="/customtemplate">Custom Template</a>
+          <a href="https://wa.me/213549194814" target="_blank">Get Code</a>
+          <a href="https://dzeasy.netlify.app/template/index.html" target="_blank">Templates</a>
+          <a href="/customtemplate" target="_blank">Custom Template</a>
         </nav>
       </header>
 
@@ -140,7 +144,7 @@ const SubmissionForm = () => {
         <img src="robot.svg" alt='RBT'></img>
 
         <form className="submission-form" onSubmit={handleSubmit}>
-        <h2>Add your details and take your landing page in 2 seconds</h2>
+        <h2><TypingEffect text={textToType} speed={typingSpeed} /></h2>
 
         {currentStep === 0 && (
         <>
@@ -160,7 +164,7 @@ const SubmissionForm = () => {
           onChange={handleChange}
           required
         />
-        <button type="button" onClick={handleNextStep}>Next</button>
+        <button type="button" onClick={handleNextStep}>Next <FontAwesomeIcon icon={faArrowRight} /></button>
         </>
         )}
 
@@ -302,11 +306,11 @@ const SubmissionForm = () => {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', flexDirection: 'row' }}>
           {currentStep > 0 && (
-            <button style={{ width: '100px', marginRight: '20px'}} type="button" onClick={handlePreviousStep}>Previous</button>
+            <button style={{ width: '120px', marginRight: '20px'}} type="button" onClick={handlePreviousStep}><FontAwesomeIcon icon={faArrowLeft} /> Previous</button>
           )}
           
           {currentStep < 14 && (
-            <button style={{ width: '100px' }} type="button" onClick={handleNextStep}>Next</button>
+            <button style={{ width: '120px' }} type="button" onClick={handleNextStep}>Next <FontAwesomeIcon icon={faArrowRight} /></button>
           )}
         </div>
         </>
@@ -353,50 +357,86 @@ const SubmissionForm = () => {
       </div>
 
       <div
-    className="details"
-    style={{
-      backgroundColor: '#0f0f0f',
-      border: '2px solid #333',
-      borderRadius: '10px',
-      padding: '20px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      maxWidth: '600px',
-      margin: '20px auto',
-      fontFamily: 'Arial, sans-serif',
-    }}
-  >
-    <h1 style={{ color: '#fafafa', borderBottom: '2px solid #007bff', paddingBottom: '10px' }}>
-      Google Sheet AppScript Code snippet
-    </h1>
-    <h3 style={{ color: '#d3d3d3', direction: 'rtl'}}>مقتطف من كود AppScript الخاص بـ Google Sheet</h3>
-    <div className="code-snippet" style={{ marginTop: '20px' }}>
-      <h3 style={{ color: '#007bff', marginBottom: '10px' }}>Copy this Code</h3>
-      <SyntaxHighlighter language="javascript" style={coy}>
-        {codeSnippet}
-      </SyntaxHighlighter>
-      <button
-        onClick={copyCodeSnippet}
-        style={{
-          backgroundColor: '#007bff',
-          color: '#fff',
-          border: 'none',
-          padding: '10px 20px',
-          marginTop: '10px',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-        }}
-      >
-        Copy Code
-      </button>
-    </div>
-  </div>
+          className="details"
+          style={{
+            backgroundColor: '#0f0f0f',
+            border: '2px solid #333',
+            borderRadius: '10px',
+            padding: '20px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            maxWidth: '600px',
+            margin: '20px auto',
+            fontFamily: 'Arial, sans-serif',
+          }}
+        >
+          <div className="documents">
+            <h2><FontAwesomeIcon icon={faFileLines} /> Docs</h2>
+            <h3>Step 1: Go to <a href="https://docs.google.com/spreadsheets" rel="noreferrer">Google sheet</a> and Click "New Sheet"</h3>
+            <img src="img/1.jpg" alt="Step1" />
+            <h3>Step 2: Click "Extensions" and then "Apps Script"</h3>
+            <img src="img/2.jpg" alt="Step2" />
+            <img src="img/3.jpg" alt="Step2" />
+            <h3>Step 3: Paste the code below in Code.gs and add your Sheet ID</h3>
+            <img src="img/4.jpg" alt="Step3" />
+        </div>
+          <h1 style={{ color: '#fafafa', borderBottom: '2px solid #007bff', paddingBottom: '10px' }}>
+            Google Sheet AppScript Code snippet
+          </h1>
+          <h3 style={{ color: '#d3d3d3', direction: 'rtl'}}>مقتطف من كود AppScript الخاص بـ Google Sheet</h3>
+          <div className="code-snippet" style={{ marginTop: '20px' }}>
+            <h3 style={{ color: '#007bff', marginBottom: '10px' }}>Copy this Code</h3>
+            <SyntaxHighlighter language="javascript" style={coy}>
+              {codeSnippet}
+            </SyntaxHighlighter>
+            <button
+              onClick={copyCodeSnippet}
+              style={{
+                backgroundColor: '#007bff',
+                color: '#fff',
+                border: 'none',
+                padding: '10px 20px',
+                marginTop: '10px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+              }}
+            >
+              Copy Code
+            </button>
+          </div>
+          <div className="documents">
+            <h3>Sheet ID:</h3>
+            <img src="img/5.jpg" alt="Step4" />
+            <h3>Step 4: Click "Deploy" and choose "New deployment"</h3>
+            <img src="img/6.jpg" alt="Step5" />
+            <img src="img/7.jpg" alt="Step5" />
+            <h3>Step 5: Click on Settings Icon, and choose "Web app"</h3>
+            <img src="img/8.jpg" alt="Step6" />
+            <img src="img/9.jpg" alt="Step6" />
+            <h3>Step 6: Change "Only myself", Click on it and choose "Anyone"</h3>
+            <img src="img/10.jpg" alt="Step7" />
+            <img src="img/11.jpg" alt="Step7" />
+            <h3>Step 7: Click "Deploy"</h3>
+            <img src="img/12.jpg" alt="Step8" />
+            <h3>Step 8: Authorize access and choose your email</h3>
+            <img src="img/13.jpg" alt="Step9" />
+            <h3>Step 9: Click "Advanced"</h3>
+            <img src="img/14.jpg" alt="Step10" />
+            <h3>Step 10: Click "Go to Untitled project (unsafe)"</h3>
+            <img src="img/15.jpg" alt="Step11" />
+            <h3>Step 11: Click "Allow"</h3>
+            <img src="img/16.jpg" alt="Step12" />
+            <h3>Step 12: Copy the URL and paste it in the field when you want to generate your landing page</h3>
+            <img src="img/17.jpg" alt="Step13" />
+        </div>
+        </div>
+        <iframe src="https://docs.google.com/spreadsheets/d/1mHXP6VnLTwmtigt3_a3MuTr0tOISEDeH0jYcRT34Jl4/edit?usp=sharing" style={{ width: '100%', minHeight: '500px', borderRadius: '20px', height: 'auto', border: 'none' }}></iframe>
 
       <footer className="footer">
         <div className="logo"><img style={{ width: '100px' }} src="logo.svg" alt='logo'></img></div>
         <nav>
-          <a href="https://dzeasy.netlify.app/privacy-policy/index.html">Privacy Policy</a>
-          <a href="https://dzeasy.netlify.app/terms-of-service/index.html">Terms of Service</a>
+          <a href="https://dzeasy.netlify.app/privacy-policy/index.html" target="_blank">Privacy Policy</a>
+          <a href="https://dzeasy.netlify.app/terms-of-service/index.html" target="_blank">Terms of Service</a>
         </nav>
         <div className="contact-info">
           <p>

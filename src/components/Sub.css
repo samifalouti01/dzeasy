@@ -336,3 +336,39 @@ body {
 .social-media a:hover {
     color: #981FFF; /* Change color on hover */
 }
+
+.documents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 95%;
+    gap: 20px;
+}
+
+.documents img {
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 20px;
+}
+
+/* src/TypingAnimation.css */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+  
+  h1 {
+    overflow: hidden; /* Ensures text content doesn't wrap */
+    white-space: nowrap; /* Keeps the text on a single line */
+    border-right: .15em solid black; /* The cursor */
+    animation: blink-caret .75s step-end infinite;
+  }
+  
