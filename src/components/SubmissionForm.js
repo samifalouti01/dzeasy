@@ -134,9 +134,9 @@ const SubmissionForm = () => {
       <header className="header">
         <div className="logo"><img style={{ width: '50px' }} src="logo.svg" alt="logo" /></div>
         <nav>
-          <a href="https://wa.me/213549194814" target="_blank">Get Code</a>
-          <a href="https://dzeasy.netlify.app/template/index.html" target="_blank">Templates</a>
-          <a href="/customtemplate" target="_blank">Custom Template</a>
+          <a href="https://wa.me/213549194814" target="_blank" rel="noreferrer noopener">Get Code</a>
+          <a href="https://dzeasy.netlify.app/template/index.html" target="_blank" rel="noreferrer noopener">Templates</a>
+          <a href="/customtemplate" target="_blank" rel="noreferrer noopener">Custom Template</a>
         </nav>
       </header>
 
@@ -371,7 +371,7 @@ const SubmissionForm = () => {
         >
           <div className="documents">
             <h2><FontAwesomeIcon icon={faFileLines} /> Docs</h2>
-            <h3>Step 1: Go to <a href="https://docs.google.com/spreadsheets" rel="noreferrer">Google sheet</a> and Click "New Sheet"</h3>
+            <h3>Step 1: Go to <a href="https://docs.google.com/spreadsheets" rel="noreferrer noopener">Google sheet</a> and Click "New Sheet"</h3>
             <img src="img/1.jpg" alt="Step1" />
             <h3>Step 2: Click "Extensions" and then "Apps Script"</h3>
             <img src="img/2.jpg" alt="Step2" />
@@ -430,13 +430,13 @@ const SubmissionForm = () => {
             <img src="img/17.jpg" alt="Step13" />
         </div>
         </div>
-        <iframe src="https://docs.google.com/spreadsheets/d/1mHXP6VnLTwmtigt3_a3MuTr0tOISEDeH0jYcRT34Jl4/edit?usp=sharing" style={{ width: '100%', minHeight: '500px', borderRadius: '20px', height: 'auto', border: 'none' }}></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/1mHXP6VnLTwmtigt3_a3MuTr0tOISEDeH0jYcRT34Jl4/edit?usp=sharing" style={{ width: '100%', minHeight: '500px', borderRadius: '20px', height: 'auto', border: 'none' }} title="Unique Title"></iframe>
 
       <footer className="footer">
         <div className="logo"><img style={{ width: '100px' }} src="logo.svg" alt='logo'></img></div>
         <nav>
-          <a href="https://dzeasy.netlify.app/privacy-policy/index.html" target="_blank">Privacy Policy</a>
-          <a href="https://dzeasy.netlify.app/terms-of-service/index.html" target="_blank">Terms of Service</a>
+          <a href="https://dzeasy.netlify.app/privacy-policy/index.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
+          <a href="https://dzeasy.netlify.app/terms-of-service/index.html" target="_blank" rel="noreferrer noopener">Terms of Service</a>
         </nav>
         <div className="contact-info">
           <p>
