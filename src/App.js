@@ -5,8 +5,6 @@ import SubmissionForm from './components/SubmissionForm';
 import LandingPage from './components/LandingPage';
 import CustomCode from './components/CustomCode';
 import Premium from './components/Premium';
-import './App.css';
-
 
 const App = () => (
   <Router>
