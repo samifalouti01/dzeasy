@@ -4,10 +4,12 @@ import { faFacebook, faTwitter, faInstagram, faWhatsapp } from '@fortawesome/fre
 import './Sub.css';
 import Details from './details';
 import Sheet from './sheet';
+import LoadExternalScript from './LoadExternalScript';
 const SubmissionForm = () => {
 
   return (
     <div>
+      <LoadExternalScript />
       <header className="header">
         <div className="logo"><img src="DZLogo1.svg" alt="logo" /></div>
         <nav className="navi">
