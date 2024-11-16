@@ -31,7 +31,7 @@ const CustomCode = () => {
         setIsSubmitting(true);
     
         try {
-            const url = 'https://script.google.com/macros/s/AKfycbzo2Gl-fFU1CPmWmkeNsruypaUP2fkPearVp_oXvbweGaQnAMN0SPmWQXYo26kH3b9ThA/exec';
+            const url = 'https://script.google.com/macros/s/AKfycbxynClTmz4Sls2x2Xv5mrCthS8cZwSpZROV0y3Dan5mmEPAFOOeAEbq0bjAEnsbsh1_Xw/exec';
             
             const dataToSend = new URLSearchParams();
             dataToSend.append('username', formData.username);

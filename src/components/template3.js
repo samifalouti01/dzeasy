@@ -281,7 +281,7 @@ const generateHTML = ({ title, name, price, email, Product, sheet, storeUrl, wha
 <body>
     <div class="header">
         <h3>${name}</h3>
-        <img src="${logoUrl}" alt="TikTok Logo">
+        <img src="${logoUrl}" alt="Logo">
     </div>
     <a href="${Product}" target="_blank" rel="noopener noreferrer">
         <img src="${Product}" alt="${title}" class="product-image">
